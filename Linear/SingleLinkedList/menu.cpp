@@ -1,6 +1,7 @@
 #include "SingleLinkedList.h"
 #include "Type.h"
 
+# if 0
 //菜单选择初始化链表:测试成功
 void MenuInitList(SingleLinkedList * list){
     printf("initializing----\n");
@@ -123,5 +124,6 @@ void MenuClear(SingleLinkedList list ){
 
 
 
+#endif
 
 

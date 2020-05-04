@@ -4,6 +4,7 @@
 #include "node.h"
 #include "error.h"
 
+
 //单向链表类型
 typedef LNode *SingleLinkedList;
 
@@ -72,5 +73,41 @@ Status ClearList(SingleLinkedList  list);
  * @return
  */
 Status printList(SingleLinkedList list);
+
+
+/**
+ * @brief 提供遍历该单向链表的接口
+ * @param list
+ * @return
+ */
+ElemType travelList(SingleLinkedList list, int (*visitor)(ElemType e));
+
+
+/**
+ * @brief 寻找相等的元素
+ * @param 函数指针, 判断两个元素是否相等的指针, 相等时返回TRUE , 不相等时返回FALSE
+ * @param list
+ * @return
+ */
+ElemType getEqualElem(SingleLinkedList list ,ElemType e, int (*isequal)(ElemType e1, ElemType e2));
+
+
+
+/**
+ * @brief 遍历在圈里的所有城市, 可以指定遍历的方式
+ * @param list
+ * @param r : 半径
+ * @param longtitude  : 经度
+ * @param latitude  : 纬度
+ * @return
+ */
+ElemType travelCityInCircle(SingleLinkedList list ,
+                            int r,
+                            int longtitude,
+                            int latitude,
+                            int (*visit)(ElemType e));
+
+
+
 
 #endif // SINGLELINKEDLIST_H

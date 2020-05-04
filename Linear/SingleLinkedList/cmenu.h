@@ -1,8 +1,6 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef CMENU_H
+#define CMENU_H
 #include "SingleLinkedList.h"
-
-# if 0
 
 //菜单选择初始化链表
 void MenuInitList(SingleLinkedList *);
@@ -25,63 +23,64 @@ void MenuDelete(SingleLinkedList );
 //菜单选择清空链表
 void MenuClear(SingleLinkedList );
 
+//更新城市链表
+void MenuUpdate(SingleLinkedList );
 
 
 
 void init() {
     char c;
     SingleLinkedList list = NULL;
+    printf("city data initalizing .......\n");
+    MenuInitList(&list);
     while(1) {
-        printf("*  *  *  *  *  *  *  *  *  *  a.init list              *  *  *  *  *  *  *  *\n");
-        printf("*  *  *  *  *  *  *  *  *  *  b.print list            *  *  *  *  *  *  *  * \n");
-        printf("*  *  *  *  *  *  *  *  *  *  c.insert element    *  *  *  *  *  *  *  * \n");
-        printf("*  *  *  *  *  *  *  *  *  *  d.find element       *  *  *  *  *  *  *  * \n");
-        printf("*  *  *  *  *  *  *  *  *  *  e.delete element   *  *  *  *  *  *  *  * \n");
-        printf("*  *  *  *  *  *  *  *  *  *  f.get element        *  *  *  *  *  *  *  * \n");
-        printf("*  *  *  *  *  *  *  *  *  *  g.clear list 	     	*  *  *  *  *  *  *  * \n");
-        printf("*  *  *  *  *  *  *  *  *  *  h.exit                    *  *  *  *  *  *  *  * \n");
+        printf("*  *  *  *  *  *  *  *  *  *  a.print city list            *  *  *  *  *  *  *  * \n");
+        printf("*  *  *  *  *  *  *  *  *  *  b.insert city             *  *  *  *  *  *  *  * \n");
+        printf("*  *  *  *  *  *  *  *  *  *  c.find city                 *  *  *  *  *  *  *  * \n");
+        printf("*  *  *  *  *  *  *  *  *  *  d.delete city            *  *  *  *  *  *  *  * \n");
+        printf("*  *  *  *  *  *  *  *  *  *  e.find city in circle         *  *  *  *  *  *  *  * \n");
+        printf("*  *  *  *  *  *  *  *  *  *  f.update city               *  *  *  *  *  *  *  *\n");
+        printf("*  *  *  *  *  *  *  *  *  *  g.exit                    *  *  *  *  *  *  *  * \n");
+        //初始化菜单
+        putchar('\n');
+        MenuPrintList(list);
         printf("Please enter a option:");
         scanf("%c", &c);
         printf("\n");
+
         switch(c) {
             case 'a' :{
-                MenuInitList(&list);
-                getchar();
-                printf("\n");
-            } break;
-            case 'b' :{
                 MenuPrintList(list);
                 getchar();
                 printf("\n");
             } break;
-            case 'c' :{
+            case 'b' :{
                 MenuInsert(list);
                 getchar();
                 printf("\n");
             } break;
-            case 'd' :{
+            case 'c' :{
                 MenuFind(list);
                 getchar();
                 printf("\n");
             } break;
-            case 'e' :{
+            case 'd' :{
                 MenuDelete(list);
                 getchar();
                 printf("\n");
             } break;
-            case 'f' :{
+            case 'e' :{
                 MenuGetElem(list);
                 getchar();
                 printf("\n");
             } break;
 
-            case 'g' :{
-                MenuClear(list);
+            case 'f' :{
+                MenuUpdate(list);
                 getchar();
                 printf("\n");
             } break;
-
-            case 'h' :{
+            case 'g' :{
             DestroyList(list);
                 exit(0);
             }
@@ -94,6 +93,9 @@ void init() {
 }
 
 
-#endif
 
-#endif // MENU_H
+
+
+
+
+#endif // CMENU_H

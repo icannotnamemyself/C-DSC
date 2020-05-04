@@ -1,12 +1,16 @@
 #include <iostream>
 #include "SingleLinkedList.h"
-#include "menu.h"
+#include "cmenu.h"
 
 using namespace std;
 
 int main()
 {
+    //City city = CreateCity("name" ,30,30);
     init();
+
+    //printCity(city);
+
     return 0;
 }
 
@@ -17,14 +21,14 @@ void testList(){
     int arr1[] = {6};
 
     //InitList(&SList, arr1, 1);
-    InitList(&SList, arr, 6);
+    //InitList(&SList, arr, 6);
     printList(SList);
     ListDelete(SList, 0);
     printList(SList);
-    ListInsert(SList,323,3);
+    //ListInsert(SList,323,3);
     printList(SList);
 
-    printf("find element index:%d",FindElem(SList,  3));
+    //printf("find element index:%d",FindElem(SList,  3));
 
 
 }

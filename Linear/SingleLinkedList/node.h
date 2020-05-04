@@ -1,8 +1,8 @@
 #ifndef NODE_H
 #define NODE_H
 #include "Type.h"
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 //节点数据结构
 typedef struct node{
@@ -32,5 +32,7 @@ Status DestoryNode(LNode * node);
  * @return 正常返回OK
  */
 Status InsertAfter(LNode* prev , ElemType e);
+
+
 
 #endif // node_h

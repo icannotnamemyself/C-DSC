@@ -152,3 +152,53 @@ Status printList(SingleLinkedList list){
     putchar('\n');
     return OK;
 }
+
+
+ElemType travelList(SingleLinkedList list, int (*visit)(ElemType e)){
+    // 返回1 时停止
+    LNode * first = list->next;
+
+    while(first){
+        //若返回TRUE(1)停止访问
+        if(visit(first->data))
+            return first->data;
+        first= first->next;
+    }
+    return NULL;
+}
+
+ElemType getEqualElem(SingleLinkedList list ,ElemType e, int (*isequal)(ElemType e1, ElemType e2)){
+    // 返回1 时停止
+    LNode * first = list->next;
+
+    while(first){
+        //若相等停止访问, 返回元素
+        if(isequal(first->data, e))
+            return first->data;
+        first= first->next;
+    }
+    return NULL;
+}
+
+ElemType travelCityInCircle(SingleLinkedList list ,
+                            int r,
+                            int longtitude,
+                            int latitude,
+                            int (*visit)(ElemType e)
+                            ){
+    // 返回1 时停止
+    LNode * first = list->next;
+
+    while(first){
+        //若在圈子里则访问元素
+        ElemType city = first->data;
+        if((    (city->latitude - latitude )*(city->longtitude - latitude)
+                +(city->longtitude - longtitude)*(city->longtitude - longtitude))
+                <r*r)
+            visit(city);
+
+        first = first->next;
+    }
+
+    return NULL;
+}
