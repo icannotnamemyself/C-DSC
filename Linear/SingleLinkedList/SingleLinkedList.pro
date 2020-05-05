@@ -13,6 +13,7 @@ SOURCES += \
         node.cpp
 
 HEADERS += \
+    SingleCircleList.h \
     SingleLinkedList.h \
     Type.h \
     cityList.h \

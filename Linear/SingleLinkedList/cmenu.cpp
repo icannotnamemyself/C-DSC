@@ -141,8 +141,6 @@ void MenuGetElem(SingleLinkedList list ){
 
     //打印在范围内的城市信息
     travelCityInCircle(list, distance, longtitude, latitude, printCity);
-
-
 }
 
 void MenuDeleteByPosition(SingleLinkedList list){
