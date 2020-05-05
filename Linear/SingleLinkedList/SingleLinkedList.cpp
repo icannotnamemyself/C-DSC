@@ -1,6 +1,7 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include "SingleLinkedList.h"
-#include "stdlib.h"
-#include "stdio.h"
+#include "helper.h"
 
 
 Status InitList(SingleLinkedList  * list, ElemType * e, int length){
@@ -192,9 +193,7 @@ ElemType travelCityInCircle(SingleLinkedList list ,
     while(first){
         //若在圈子里则访问元素
         ElemType city = first->data;
-        if((    (city->latitude - latitude )*(city->longtitude - latitude)
-                +(city->longtitude - longtitude)*(city->longtitude - longtitude))
-                <r*r)
+        if(CalcDistance(city->longtitude,city->latitude,longtitude,latitude)<r)
             visit(city);
 
         first = first->next;

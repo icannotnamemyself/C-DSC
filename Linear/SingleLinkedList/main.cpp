@@ -1,16 +1,13 @@
 #include <iostream>
 #include "SingleLinkedList.h"
 #include "cmenu.h"
+#include <math.h>
 
 using namespace std;
 
 int main()
 {
-    //City city = CreateCity("name" ,30,30);
     init();
-
-    //printCity(city);
-
     return 0;
 }
 

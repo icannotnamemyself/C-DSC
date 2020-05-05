@@ -1,5 +1,6 @@
-#include "cityList.h"
 #include <string.h>
+#include "cityList.h"
+#include "helper.h"
 
 /**
  * @brief 初始化城市, 有一些默认数据
@@ -7,7 +8,7 @@
  * @return 状态信息
  */
 
-Status InitCity(SingleLinkedList* list){
+Status InitCityList(SingleLinkedList* list){
     City cities[] = {
         CreateCity("BeiJing", 116, 40),
         CreateCity("Shanghai", 121, 35),
@@ -152,15 +153,10 @@ Status printCity(City city){
     return FALSE;
 }
 
-int PrintIfCityInCircle(ElemType city,int r, int longtitude ,int latitude){
 
-    if((    (city->latitude - latitude )*(city->longtitude - latitude)
-            +(city->longtitude - longtitude)*(city->longtitude - longtitude))
-            <r*r)
-        printCity(city);
+double CalcCityDistance(City city1 , City city2){
+    return CalcDistance(city1->longtitude, city1->latitude,city2->longtitude, city2->latitude);
 }
-
-
 
 
 

@@ -7,6 +7,7 @@ SOURCES += \
         SingleLinkedList.cpp \
         cityList.cpp \
         cmenu.cpp \
+        helper.cpp \
         main.cpp \
         menu.cpp \
         node.cpp
@@ -17,6 +18,7 @@ HEADERS += \
     cityList.h \
     cmenu.h \
     error.h \
+    helper.h \
     menu.h \
     node.h
 LIBS += -static

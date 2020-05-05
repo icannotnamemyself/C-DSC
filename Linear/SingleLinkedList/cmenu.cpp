@@ -8,7 +8,7 @@ void MenuPrintList(SingleLinkedList list ){
 }
 //菜单选择初始化链表
 void MenuInitList(SingleLinkedList * list){
-    InitCity(list);
+    InitCityList(list);
 }
 
 
@@ -128,10 +128,10 @@ void MenuGetElem(SingleLinkedList list ){
     int longtitude  = 0;
     int latitude = 0;
     int distance = 0;
-    printf("Please enter the longtitude of the city: ");
+    printf("Please enter the longtitude: ");
     scanf("%d", &longtitude);
 
-    printf("Please enter the latitude of the city: ");
+    printf("Please enter the latitude: ");
     scanf("%d", &latitude);
 
 
@@ -195,7 +195,21 @@ void MenuDelete(SingleLinkedList list ){
     MenuPrintList(list); //打印
 }
 
-//菜单选择清空链表
-void MenuClear(SingleLinkedList ){
+void MenuGetDistance(SingleLinkedList list){
+    printf("Please enter two city in the list (separated by space)): ");
 
+    char name1[20];
+    char name2[20];
+    scanf("%s %s", name1, name2);
+
+    City city1 = FindCityByName(list , name1);
+    City city2 = FindCityByName(list , name2);
+
+    //有一个是空就返回
+    if(!city1 || !city2){
+        printf("city doesn't exist in the list");
+        return ;
+    }
+
+    printf("The distance between two city is : %lf", CalcCityDistance(city1, city2));
 }
