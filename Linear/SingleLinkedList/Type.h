@@ -9,6 +9,8 @@ typedef struct city {
 
 typedef City ElemType;
 
+
+
 typedef int Status;
 
 #define FALSE 0

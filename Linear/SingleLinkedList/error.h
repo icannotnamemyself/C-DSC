@@ -8,4 +8,6 @@
 #define ERROR -1  //表示未知错误
 #define OK 1  //表示返回正确
 
+
+
 #endif // ERROR_H

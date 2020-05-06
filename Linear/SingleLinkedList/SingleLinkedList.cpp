@@ -122,9 +122,12 @@ Status ClearList(SingleLinkedList  list){
 
     LNode *next = node->next;
 
-    while(next != NULL){
+
+    for(;;){
         DestoryNode(node);
         node = next;
+        if(node == NULL)
+            break;
         next = next->next;
     }
     list->next = NULL;
